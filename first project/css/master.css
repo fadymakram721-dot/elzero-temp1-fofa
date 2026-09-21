@@ -6,6 +6,23 @@
 header .container img {
   width: 70px;
   transition: 0.3s;
+
+}
+#navmenu {
+  display: none;
+}
+#navmenu:checked ~ ul {
+  display:block;
+
+}
+header .links #navmenu:checked ~ label .icon span:nth-child(2){
+  width:100%;
+}
+header .icon:hover {
+  transform: scale(1.1);
+}
+header .container img:hover {
+  transform: scale(1.1);
 }
 
 .container{
@@ -13,33 +30,36 @@ header .container img {
   margin-left: auto;
   margin-right: auto;
 }
-/* Medium ≥ 768px */
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
 @media (min-width: 768px) {
   .container {
     max-width: 720px;
   }
 }
 
-/* Large ≥ 992px */
 @media (min-width: 992px) {
   .container {
     max-width: 960px;
   }
 }
 
-/* Extra large ≥ 1200px */
 @media (min-width: 1200px) {
   .container {
     max-width: 1140px;
   }
 }
 
-/* Extra extra large ≥ 1400px */
 @media (min-width: 1400px) {
   .container {
     max-width: 1320px;
   }
 }
+
 header{
   padding:20px; 
   
@@ -49,6 +69,12 @@ header .container {
   justify-content: space-between;
   align-items: center;
 }
+.container {
+  width: 100%;
+  padding-right: 12px;
+  padding-left: 12px;
+  margin-right: auto;
+  margin-left: auto; }
 header .links {
   position:relative;
 }
@@ -57,6 +83,7 @@ header .links .icon {
   display:flex;
   flex-wrap:wrap;
   justify-content: flex-end;
+  transition:0.2s;
 }
 header .links .icon span {
   background-color: #000;
@@ -72,10 +99,7 @@ header .links .icon span:nth-child(2)
   width:60%;
   transition: 0.3s;
 }
-header .links:hover .icon span:nth-child(2) {
-  width: 100%;
-  transition: 0.3s;
-}
+
 header .links ul{ 
   list-style: none;
   position:absolute;
@@ -106,9 +130,7 @@ header .links ul li a:hover{
   padding-left:20px;
 
 }
-header .links:hover ul{
-  display: block ;
-}
+
 header .links ul li:not(:last-child) a {
   border-bottom:1px solid #ddd;
 }
