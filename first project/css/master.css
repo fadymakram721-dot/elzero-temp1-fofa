@@ -2,6 +2,7 @@
   margin:0;
   padding:0;
   box-sizing:border-box;
+
 }
 header .container img {
   width: 70px;
@@ -60,10 +61,6 @@ header .container img:hover {
   }
 }
 
-header{
-  padding:20px; 
-  
-}
 header .container {
   display: flex;
   justify-content: space-between;
@@ -103,34 +100,88 @@ header .links .icon span:nth-child(2)
 header .links ul{ 
   list-style: none;
   position:absolute;
-  background-color: rgb(230, 230, 230);
+  background: #071A3D; 
   right: 0;
   min-width: 180px;
   top: calc(100% + 15px);
   display: none;
   transition: 0.3s;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  z-index: 1;
 
 }
 header .links ul::before {
   content:'';
     border: 10px solid;
-    border-color: transparent transparent rgb(230, 230, 230) transparent ;
+    border-color: transparent transparent #071A3D transparent ;
     right: 5px;
     top:-20px;
     position:absolute;
 }
 header .links ul li a{
   text-decoration: none;
-  color:rgb(34, 33, 33);
+  color:#F5F9FF;
   display:block;
   padding:15px;
   transition: 0.3s;
 }
 header .links ul li a:hover{
   padding-left:20px;
+    background-color: #1E4F9A;
+
 
 }
 
-header .links ul li:not(:last-child) a {
+/* header .links ul li:not(:last-child) a {
   border-bottom:1px solid #ddd;
+} */
+
+.landing{
+  background-image:
+    linear-gradient(rgba(7, 26, 61, 0.25), rgba(7, 26, 61, 0.25)),url(../assets/blue\ mountain.avif);
+  background-size: cover;
+  background-position: center;
+  height: calc(100vh - 70px);
+  position: relative;
+} 
+.landing .intro-text{
+  position: absolute;
+  left:50%;
+  top: 50%;
+  transform: translate(-50% , -50%);
+  text-align:center;
+}
+.landing .intro-text h1{
+  color :#F5F9FF;
+  font-size :40px;
+  text-align:center;
+}
+.features {
+  padding-top:60px;
+  padding-bottom: 60px;
+
+}
+.features .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));  
+    gap: 20px;
+}
+.features .container .feat{
+  text-align:center;
+  padding:10px;
+}
+.features .container .feat i {
+  font-size: 50px;
+  margin-bottom: 5px;
+  color:#1E4F9A;
+}
+.features .container .feat h3 {
+  font-weight:800;
+  margin :30px 0;
+}
+.features .container .feat p {
+  line-height:1.6em;
+  color:#777;
+
 }
